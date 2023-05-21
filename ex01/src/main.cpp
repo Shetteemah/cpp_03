@@ -2,79 +2,64 @@
 
 int main()
 {
-    std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
-    {
-        std::cout << "\033[34mConstructing\033[0m" << std::endl;
-        ClapTrap a;
-        ClapTrap b("Cody");
+    std::string player_name;
+    std::string enemy_name;
+    std::string player_clone;
+    std::cout << "Enter your name: ";
+    std::cin >> player_name;
+    std::cout << "Now enter opponent's name: ";
+    std::cin >> enemy_name;
+    player_clone = player_name + "'s clone";
 
-        std::cout << "\033[34mTesting ClapTrap\033[0m" << std::endl;
-        a.attack("some other robot");
-        a.takeDamage(10);
-        a.takeDamage(10);
-        a.beRepaired(5);
-        a.attack("some other other robot");
-        b.beRepaired(3);
-        for (int i = 0; i < 12; i++)
-            b.attack("Cody-clone");
-        b.beRepaired(3);
+    std::cout << "\n" << "╔════╗─────────╔╗──╔═╗───────╔═══╗╔╗───────╔════╗";
+    std::cout << "\n" << "║╔╗╔╗║────────╔╝╚╗─║╔╝───────║╔═╗║║║───────║╔╗╔╗║";
+    std::cout << "\n" << "╚╝║║╚╝╔══╗╔══╗╚╗╔╝╔╝╚╗╔══╗╔═╗║║─╚╝║║─╔══╗╔═╩╣║║╚╝╔═╗╔══╗╔══╗";
+    std::cout << "\n" << "──║║──║║═╣║══╣─║║─╚╗╔╝║╔╗║║╔╝║║─╔╗║║─║╔╗║║╔╗║║║──║╔╝║╔╗║║╔╗║";
+    std::cout << "\n" << "──║║──║║═╣╠══║─║╚╗─║║─║╚╝║║║─║╚═╝║║╚╗║╔╗║║╚╝║║║──║║─║╔╗║║╚╝║";
+    std::cout << "\n" << "──╚╝──╚══╝╚══╝─╚═╝─╚╝─╚══╝╚╝─╚═══╝╚═╝╚╝╚╝║╔═╝╚╝──╚╝─╚╝╚╝║╔═╝";
+    std::cout << "\n" << "─────────────────────────────────────────║║─────────────║║";
+    std::cout << "\n" << "─────────────────────────────────────────╚╝─────────────╚╝" << "\n";
 
-        std::cout << "\n### TESTING SCAVTRAP ###\n" << std::endl;
-        std::cout << "\033[34mConstructing\033[0m" << std::endl;
-        ScavTrap c("Guardian");
+    ClapTrap player_one;
+    ClapTrap player_two(player_name);
+    std::cout << "\n" << "========================================================================= " << "\n\n";
 
-        std::cout << "\033[34mTesting ScavTrap\033[0m" << std::endl;
-        c.attack("some enemy");
-        c.takeDamage(30);
-        c.guardGate();
-        c.beRepaired(10);
-        c.attack("another enemy");
+    player_one.attack(enemy_name);
+    player_one.takeDamage(10);
+    player_one.takeDamage(10);
+    player_one.beRepaired(5);
+    player_one.attack(enemy_name);
+    std::cout << "\n";
+    player_two.beRepaired(3);
+    std::cout << "\n";
+    for (int i = 0; i < 12; i++)
+        player_two.attack(player_clone);
+    player_two.beRepaired(3);
 
-        std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-    }
-    return 0;
+    std::cout << "\n" << "╔════╗─────────╔╗──╔═╗───────╔═══╗────────────╔════╗";
+    std::cout << "\n" << "║╔╗╔╗║────────╔╝╚╗─║╔╝───────║╔═╗║────────────║╔╗╔╗║";
+    std::cout << "\n" << "╚╝║║╚╝╔══╗╔══╗╚╗╔╝╔╝╚╗╔══╗╔═╗║╚══╗╔══╗╔══╗╔╗╔╗╚╝║║╚╝╔═╗╔══╗╔══╗";
+    std::cout << "\n" << "──║║──║║═╣║══╣─║║─╚╗╔╝║╔╗║║╔╝╚══╗║║╔═╝║╔╗║║╚╝║──║║──║╔╝║╔╗║║╔╗║";
+    std::cout << "\n" << "──║║──║║═╣╠══║─║╚╗─║║─║╚╝║║║─║╚═╝║║╚═╗║╔╗║╚╗╔╝──║║──║║─║╔╗║║╚╝║";
+    std::cout << "\n" << "──╚╝──╚══╝╚══╝─╚═╝─╚╝─╚══╝╚╝─╚═══╝╚══╝╚╝╚╝─╚╝───╚╝──╚╝─╚╝╚╝║╔═╝";
+    std::cout << "\n" << "───────────────────────────────────────────────────────────║║";
+    std::cout << "\n" << "───────────────────────────────────────────────────────────╚╝" << "\n";
+
+    ScavTrap player_three;
+    ScavTrap player_four(player_name);
+    std::cout << "\n" << "========================================================================= " << "\n\n";
+
+	player_three.attack("CloneTrap");
+	for (int i = 0; i < 50; i++)
+		player_three.attack("CloneTrap");
+	player_three.beRepaired(22);
+	player_three.takeDamage(21);
+	player_three.beRepaired(22);
+	player_three.guardGate();
+	player_three.guardGate();
+	player_four.attack(player_clone);
+	player_four.takeDamage(101);
+	player_four.takeDamage(15);
+	player_four.attack(player_clone);
+    return (0);
 }
-
-// int main()
-// {
-// 	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
-// 	{
-// 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-// 		ClapTrap a;
-// 		ClapTrap b("Cody");
-
-// 		std::cout << "\033[34mTesting\033[0m" << std::endl;
-// 		a.attack("some other robot");
-// 		a.takeDamage(10);
-// 		a.takeDamage(10);
-// 		a.beRepaired(5);
-// 		a.attack("some other other robot");
-// 		b.beRepaired(3);
-// 		for (int i = 0; i < 12; i++)
-// 			b.attack("Cody-clone");
-// 		b.beRepaired(3);
-// 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-// 	}
-// 	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
-// 	{
-// 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-// 		ScavTrap c;
-// 		ScavTrap d("Savage");
-
-// 		std::cout << "\033[34mTesting\033[0m" << std::endl;
-// 		c.attack("CloneTrap");
-// 		// for (int i = 0; i < 50; i++)
-// 		// 	c.attack("CloneTrap");
-// 		c.beRepaired(22);
-// 		c.takeDamage(21);
-// 		c.beRepaired(22);
-// 		c.guardGate();
-// 		c.guardGate();
-// 		d.attack("Savage-clone");
-// 		d.takeDamage(101);
-// 		d.takeDamage(15);
-// 		d.attack("ScavTrap-clone");
-// 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-// 	}
-// 	return (0);
-// }

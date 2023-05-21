@@ -8,7 +8,7 @@
 class ClapTrap
 {
 /*private variable members*/
-    private:
+    protected:
         std::string _name;
         unsigned int _hitPoints;
         unsigned int _energyPoints;
@@ -23,7 +23,7 @@ class ClapTrap
         /*constructor that takes a string parameter*/
         ClapTrap(std::string _name);
     /*destructor*/
-        ~ClapTrap();
+        virtual ~ClapTrap();
     /*overload operator*/
         ClapTrap &operator=(const ClapTrap &src);
     /*public methods/functions*/
