@@ -4,30 +4,32 @@
 /*default constructor*/
 ClapTrap::ClapTrap(): _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "[ClapTrap]\t" << "defualt constructor has been called." << std::endl;
+    std::cout << "[ClapTrap]\tdefualt constructor has been called." << std::endl;
 }
+
 /*copy constructor*/
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-    std::cout << "[ClapTrap]\t" << "the copy constructor has been called." << std::endl;
+    std::cout << "[ClapTrap]\tthe copy constructor has been called." << std::endl;
     *this = copy;
 }
+
 /*constructor that takes a string parameter*/
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "[ClapTrap]\t" << "constructor for " << _name << " has been called!" << std::endl;
+    std::cout << "[ClapTrap]\tconstructor for " << this->_name << " has been called!" << std::endl;
 }
 
 /*destructors*/
 ClapTrap::~ClapTrap()
 {
-    std::cout << "[ClapTrap]\t" << "destructor for " << _name << " has been called." << std::endl;
+    std::cout << "[ClapTrap]\tdestructor for " << this->_name << " has been called." << std::endl;
 }
 
 /*overload operators*/
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-    std::cout << "[ClapTrap]\t" << "assignment operator called... " << std::endl;
+    std::cout << "[ClapTrap]\tassignment operator called... " << std::endl;
     this->_name = src._name;
     this->_hitPoints = src._hitPoints;
     this->_energyPoints = src._energyPoints;
@@ -35,6 +37,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
     std::cout << "assignment successful!" << std::endl;
     return (*this);
 }
+
 /*public methods*/
 void    ClapTrap::attack(const std::string &target)
 {

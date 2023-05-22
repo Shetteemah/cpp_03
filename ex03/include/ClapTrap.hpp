@@ -1,10 +1,11 @@
-#ifndef __CLAP_TRAP__
-#define __CLAP_TRAP__
+#ifndef __CLAPTRAP_HPP__
+#define __CLAPTRAP_HPP__
 
 #include <string>
 #include <iostream>
 
 /*my class*/
+
 class ClapTrap
 {
 /*private variable members*/
@@ -21,7 +22,7 @@ class ClapTrap
         /*copy constructor*/
         ClapTrap(const ClapTrap &copy);
         /*constructor that takes a string parameter*/
-        ClapTrap(std::string _name);
+        ClapTrap(const std::string name);
     /*destructor*/
         virtual ~ClapTrap();
     /*overload operator*/

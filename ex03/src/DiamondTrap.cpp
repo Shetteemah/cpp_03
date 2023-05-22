@@ -45,7 +45,7 @@ void    DiamondTrap::attack(const std::string &target)
     ScavTrap::attack(target);
 }
 
-void    whoAmI()
+void    DiamondTrap::whoAmI()
 {
     std::cout << "You're now interacting with DiamondTrap called " << this->_name << ", from a ClapTrap clan called " << ClapTrap::_name << "." << std::endl;
 }
